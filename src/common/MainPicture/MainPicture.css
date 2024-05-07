@@ -1,0 +1,11 @@
+.image-container {
+    display: grid;
+    place-items: center;
+    padding-top: 10px;
+}
+
+.picture-frame {
+    width: 60vw;
+    max-width: 500px;
+    border-radius: 30px;
+}

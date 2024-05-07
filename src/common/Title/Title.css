@@ -1,0 +1,13 @@
+:root {
+    --link-primary: #AEAEAE;
+    --theme-primary: #9e1e2b;
+    --title-colour: #7D141F;
+}
+
+.title {
+    font-size: 6vw;
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Lato', sans-serif;
+    color: var(--title-colour)
+}
