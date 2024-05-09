@@ -1,3 +1,18 @@
+:root {
+    --link-primary: #AEAEAE;
+    --theme-primary: #9e1e2b;
+    --features: #cccccc;
+}
+
+.special-link {
+    font-size: 40px;
+    color: var(--link-primary)
+}
+
+.features {
+    background-color: var(--features);
+}
+
 
 h1 {
     font-size: 40px;

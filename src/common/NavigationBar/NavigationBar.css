@@ -5,11 +5,12 @@
 
 .navigation-bar {
     width: 95%;
-    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
 .navigation-option {
@@ -52,6 +53,9 @@
     width: 95%;
     background-color: #9e1e2b;
     justify-content: "center";
-    height: 0.2px;
-    margin: auto;
+    height: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }

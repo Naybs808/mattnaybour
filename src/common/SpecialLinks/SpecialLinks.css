@@ -1,0 +1,27 @@
+:root {
+    --link-primary: #AEAEAE;
+    --theme-primary: #9e1e2b;
+}
+
+.special-link {
+    font-size: 35px;
+    color: var(--link-primary);
+    flex-grow: 5;
+    font-weight: 400;
+}
+
+.link-filler{
+    flex-grow: 5;    
+}
+
+.icon {
+    height: 35px;
+    color: red;
+    fill: red;
+}
+
+.iconStack {
+    cursor: pointer;
+}
+
+
