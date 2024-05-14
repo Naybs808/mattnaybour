@@ -1,0 +1,43 @@
+:root {
+    --link-primary: #AEAEAE;
+    --theme-primary: #9e1e2b;
+}
+
+
+.publication-container {
+    margin-left: 10%;
+    margin-right: 20%;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.publication {
+    display: flex;
+    align-items: center;
+    padding-top: 14px;
+}
+
+
+.icon {
+    flex-grow: 1;
+    color: var(--link-primary);
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.article-title {
+    flex-grow: 2;
+    font-size: 20px;
+    color: var(--link-primary);
+    transition: color .25s ease-in;
+}
+
+.article-title:hover {
+    color: var(--theme-primary)
+}
+
+.article-date {
+    flex-grow: 10;
+    font-size: 14px;
+    color: var(--link-primary)
+}
