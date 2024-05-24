@@ -1,18 +1,22 @@
-import React from "react";
+import React from 'react';
 
-import "./Home.css";
-import "typeface-lato";
-import NavigationBar from "../../common/NavigationBar/NavigationBar.tsx";
-import Title from "../../common/Title/Title.tsx";
+import './Home.css';
+import 'typeface-lato';
+import NavigationBar from '../../common/NavigationBar/NavigationBar.tsx';
+import Title from '../../common/Title/Title.tsx';
 
-import Headshot from "../../images/Matt.jpg";
-import MainPicture from "../../common/MainPicture/MainPicture.tsx";
-import TagLine from "../../common/TagLine/TagLine.tsx";
+import Headshot from '../../images/Matt.jpg';
+import Stage from '../../images/StageScan.jpg';
 
-import Stack from "@mui/material/Stack";
+import MainPicture from '../../common/MainPicture/MainPicture.tsx';
+import TagLine from '../../common/TagLine/TagLine.tsx';
 
-import { useSpring, animated } from "react-spring";
-import SpecialLinks from "../../common/SpecialLinks/SpecialLinks.tsx";
+import Stack from '@mui/material/Stack';
+
+import { useSpring, animated } from 'react-spring';
+import SpecialLinks from '../../common/SpecialLinks/SpecialLinks.tsx';
+import Feature from '../../common/Feature/Feature.tsx';
+import { Box } from '@mui/material';
 
 const tagline =
   "Hi, I'm Matt and I like designing websites, would you like one too?";
@@ -25,7 +29,7 @@ export default function Application() {
   });
   return (
     <>
-      <Stack direction="column" minHeight={"100vh"} display="flex">
+      <Stack direction="column" minHeight={'100vh'} display="flex">
         <NavigationBar />
 
         <animated.div style={springAppear}>
@@ -40,18 +44,19 @@ export default function Application() {
           <TagLine text={tagline} />
         </animated.div>
 
-        <Stack height={"50px"} />
+        <Stack height={'50px'} />
 
         <SpecialLinks />
       </Stack>
 
-      <Stack
-        direction="column"
-        maxHeight={"100vh"}
-        minHeight={"100vh"}
-        display="flex"
-        className={"features"}
-      ></Stack>
+      <Box maxHeight={'100vh'} minHeight={'100vh'} className={'features'}>
+        <Feature
+          image={Stage}
+          imageLeft={true}
+          title="Visual"
+          subText="Paintings, prints, and arty things."
+        ></Feature>
+      </Box>
     </>
   );
 }
