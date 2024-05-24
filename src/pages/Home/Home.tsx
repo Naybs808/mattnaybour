@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import './Home.css';
-import 'typeface-lato';
-import NavigationBar from '../../common/NavigationBar/NavigationBar.tsx';
-import Title from '../../common/Title/Title.tsx';
+import "./Home.css";
+import "typeface-lato";
+import NavigationBar from "../../common/NavigationBar/NavigationBar.tsx";
+import Title from "../../common/Title/Title.tsx";
 
-import Headshot from '../../images/Matt.jpg';
-import Stage from '../../images/StageScan.jpg';
+import Headshot from "../../images/Matt.jpg";
+import Stage from "../../images/StageScan.jpg";
 
-import MainPicture from '../../common/MainPicture/MainPicture.tsx';
-import TagLine from '../../common/TagLine/TagLine.tsx';
+import MainPicture from "../../common/MainPicture/MainPicture.tsx";
+import TagLine from "../../common/TagLine/TagLine.tsx";
 
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
-import { useSpring, animated } from 'react-spring';
-import SpecialLinks from '../../common/SpecialLinks/SpecialLinks.tsx';
-import Feature from '../../common/Feature/Feature.tsx';
-import { Box } from '@mui/material';
+import { useSpring, animated } from "react-spring";
+import SpecialLinks from "../../common/SpecialLinks/SpecialLinks.tsx";
+import Feature from "../../common/Feature/Feature.tsx";
+import { Box } from "@mui/material";
 
 const tagline =
   "Hi, I'm Matt and I like designing websites, would you like one too?";
@@ -29,7 +29,7 @@ export default function Application() {
   });
   return (
     <>
-      <Stack direction="column" minHeight={'100vh'} display="flex">
+      <Stack direction="column" minHeight={"100vh"} display="flex">
         <NavigationBar />
 
         <animated.div style={springAppear}>
@@ -44,12 +44,13 @@ export default function Application() {
           <TagLine text={tagline} />
         </animated.div>
 
-        <Stack height={'50px'} />
+        <Stack height={"50px"} />
 
         <SpecialLinks />
+        <br></br>
       </Stack>
 
-      <Box maxHeight={'100vh'} minHeight={'100vh'} className={'features'}>
+      <Box className={"features"} height={"fit-content"}>
         <Feature
           image={Stage}
           imageLeft={true}

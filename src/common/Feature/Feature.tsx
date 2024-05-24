@@ -1,9 +1,9 @@
-import { Grid, Typography } from '@mui/material';
-import React, { ReactNode } from 'react';
+import { Grid, Typography } from "@mui/material";
+import React, { ReactNode } from "react";
 
-import './Feature.css';
+import "./Feature.css";
 
-import stage from '../../images/StageScan.jpg';
+import stage from "../../images/StageScan.jpg";
 
 interface FeatureProps {
   image: any;
@@ -15,30 +15,30 @@ interface FeatureProps {
 export default function Feature(props: FeatureProps) {
   let imageNode = (
     <div className="image-container">
-      <img className="picture-frame" src={props.image} alt={'Stage'}></img>
+      <img className="picture-frame" src={props.image} alt={"Stage"}></img>
     </div>
   );
 
   let textNode = (
     <div
       style={{
-        width: 'inherit',
-        textWrap: 'nowrap',
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
       }}
     >
-      <h1> {props.title}</h1>
-      <h2> {props.subText}</h2>
       <div
         style={{
-          height: 40,
-          alignContent: 'center',
-          justifyContent: 'center',
-          width: 100,
-          backgroundColor: 'black',
-          color: 'white',
+          width: "400px",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
-        Read More
+        <h1> {props.title}</h1>
+        <h2> {props.subText}</h2>
+        <div className="see-more-button">See More</div>
       </div>
     </div>
   );
@@ -55,8 +55,14 @@ export default function Feature(props: FeatureProps) {
   }
 
   return (
-    <div style={{ paddingTop: 50 }}>
-      <Grid container columns={{ md: 12, sm: 12 }} justifyContent={'center'}>
+    <div
+      style={{
+        paddingLeft: "5%",
+        paddingTop: "100px",
+        paddingRight: "5%",
+      }}
+    >
+      <Grid container columns={{ md: 12, sm: 12 }}>
         <Grid item md={6} sm={12} xs={12}>
           {firstPart}
         </Grid>

@@ -1,4 +1,31 @@
+
+:root {
+  --link-primary: #AEAEAE;
+  --theme-primary: #9e1e2b;
+}
+
+
 .picture-frame {
-  width: inherit;
+  width: 400px;
   border-radius: 30px;
 }
+
+.see-more-button{
+  height: 40px;
+  display: flex;
+  line-height: 40px;
+  justify-content: center;
+  width: 100px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color .25s ease-in;
+}
+
+.see-more-button:hover {
+  color: var(--theme-primary)
+}
+
+
