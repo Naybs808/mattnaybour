@@ -3,7 +3,7 @@
     --theme-primary: #9e1e2b;
 }
 
-.navigation-bar {
+.navigationBar {
     width: 95%;
     display: flex;
     flex-direction: row;
@@ -13,7 +13,7 @@
     margin-right: 2.5%;
 }
 
-.navigation-option {
+.navigationOption {
     height: 55px;
     line-height: 55px;
     flex-grow: 1;
@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.end-navigation-option {
+.endNavigationOption {
     height: 55px;
     line-height: 55px;
     flex-grow: 2;
@@ -33,7 +33,7 @@
     justify-content: right;
 }
 
-.navigation-text {
+.navigationText {
     height: 55px;
     line-height: 55px;
     margin: 0;
@@ -41,7 +41,7 @@
     cursor: pointer;
 }
 
-.navigation-text:hover {
+.navigationText:hover {
     color: var(--theme-primary)
 }
 

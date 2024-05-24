@@ -6,7 +6,7 @@ import spotifyIcon from "../Iconoir/music-double-note.svg";
 import youtubeIcon from "../Iconoir/youtube.svg";
 
 import { Grid, Stack } from "@mui/material";
-import "./SpecialLinks.css";
+import styles from "./SpecialLinks.module.scss";
 
 export default function SocialLinks() {
   const openInNewTab = (url: string) => {
@@ -16,40 +16,40 @@ export default function SocialLinks() {
     <>
       <Grid container justifyContent={"center"} spacing={7}>
         <Grid item>
-          <div className="special-link">
+          <div className={styles.specialLink}>
             <Stack
               direction="row"
-              className="iconStack"
+              className={styles.iconStack}
               alignItems={"center"}
               onClick={() => {
                 openInNewTab("https://www.instagram.com/_mnaybs_/");
               }}
             >
-              <img src={instaIcon} alt="React Logo" className="icon" />{" "}
+              <img src={instaIcon} alt="React Logo" className={styles.icon} />{" "}
               {"Instagram"}
             </Stack>
           </div>
         </Grid>
         <Grid item>
-          <div className="special-link">
+          <div className={styles.specialLink}>
             <Stack
               direction="row"
-              className="iconStack"
+              className={styles.iconStack}
               alignItems={"center"}
               onClick={() => {
                 openInNewTab("https://github.com/Naybs808");
               }}
             >
-              <img src={githubIcon} alt="React Logo" className="icon" />{" "}
+              <img src={githubIcon} alt="React Logo" className={styles.icon} />{" "}
               {"Github"}
             </Stack>
           </div>
         </Grid>
         <Grid item>
-          <div className="special-link">
+          <div className={styles.specialLink}>
             <Stack
               direction="row"
-              className="iconStack"
+              className={styles.iconStack}
               alignItems={"center"}
               onClick={() => {
                 openInNewTab(
@@ -57,16 +57,16 @@ export default function SocialLinks() {
                 );
               }}
             >
-              <img src={spotifyIcon} alt="React Logo" className="icon" />{" "}
+              <img src={spotifyIcon} alt="React Logo" className={styles.icon} />{" "}
               {"Spotify"}
             </Stack>
           </div>
         </Grid>
         <Grid item>
-          <div className="special-link">
+          <div className={styles.specialLink}>
             <Stack
               direction="row"
-              className="iconStack"
+              className={styles.iconStack}
               alignItems={"center"}
               onClick={() => {
                 openInNewTab(
@@ -74,7 +74,7 @@ export default function SocialLinks() {
                 );
               }}
             >
-              <img src={youtubeIcon} alt="React Logo" className="icon" />{" "}
+              <img src={youtubeIcon} alt="React Logo" className={styles.icon} />{" "}
               {"YouTube"}
             </Stack>
           </div>

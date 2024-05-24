@@ -5,12 +5,12 @@
 }
 
 
-.picture-frame {
+.pictureFrame {
   width: 400px;
   border-radius: 30px;
 }
 
-.see-more-button{
+.seeMoreButton{
   height: 40px;
   display: flex;
   line-height: 40px;
@@ -24,8 +24,13 @@
   transition: color .25s ease-in;
 }
 
-.see-more-button:hover {
+.seeMoreButton:hover {
   color: var(--theme-primary)
+}
+
+.imageContainer {
+  display: grid;
+  place-items: center;
 }
 
 

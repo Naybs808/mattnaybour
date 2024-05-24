@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 
-import "./Feature.css";
+import styles from "./Feature.module.scss";
 
 import stage from "../../images/StageScan.jpg";
 
@@ -14,14 +14,20 @@ interface FeatureProps {
 
 export default function Feature(props: FeatureProps) {
   let imageNode = (
-    <div className="image-container">
-      <img className="picture-frame" src={props.image} alt={"Stage"}></img>
+    <div className={styles.imageContainer}>
+      <img
+        className={styles.pictureFrame}
+        src={props.image}
+        alt={"Stage"}
+      ></img>
     </div>
   );
 
   let textNode = (
     <div
+      id="MyDiv"
       style={{
+        height: "inherit",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
@@ -38,7 +44,7 @@ export default function Feature(props: FeatureProps) {
       >
         <h1> {props.title}</h1>
         <h2> {props.subText}</h2>
-        <div className="see-more-button">See More</div>
+        <div className={styles.seeMoreButton}>See More</div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./MainPicture.css";
+import styles from "./MainPicture.module.scss";
 
 interface MainPictureProps {
   image: any;
@@ -7,8 +7,8 @@ interface MainPictureProps {
 
 export default function MainPicture(props: MainPictureProps) {
   return (
-    <div className="image-container">
-      <img className="picture-frame" src={props.image} alt={"Me"}></img>
+    <div className={styles.imageContainer}>
+      <img className={styles.pictureFrame} src={props.image} alt={"Me"}></img>
     </div>
   );
 }

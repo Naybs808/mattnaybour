@@ -1,11 +1,10 @@
-.image-container {
+.imageContainer {
     display: grid;
     place-items: center;
     padding-top: 10px;
 }
 
-.picture-frame {
-    width: 55vw;
+.pictureFrame {
     max-width: 500px;
     border-radius: 30px;
 }

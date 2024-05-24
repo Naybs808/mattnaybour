@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./NavigationBar.css";
+import styles from "./NavigationBar.module.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function NavigationBar() {
@@ -8,38 +8,38 @@ export default function NavigationBar() {
 
   return (
     <>
-      <div className="navigation-bar">
+      <div className={styles.navigationBar}>
         <div
-          className="navigation-option"
+          className={styles.navigationOption}
           onClick={() => {
             navigate("/");
           }}
         >
-          <p className="navigation-text">Home</p>
+          <p className={styles.navigationText}>Home</p>
         </div>
-        <div className="filler"></div>
+        <div className={styles.filler}></div>
         <div
-          className="end-navigation-option"
+          className={styles.endNavigationOption}
           onClick={() => {
             navigate("/publications");
           }}
         >
-          <p className="navigation-text">Research</p>
+          <p className={styles.navigationText}>Research</p>
         </div>
         <div
-          className="end-navigation-option"
+          className={styles.endNavigationOption}
           onClick={() => {
             navigate("/about");
           }}
         >
-          <p className="navigation-text">About</p>
+          <p className={styles.navigationText}>About</p>
         </div>
-        <div className="end-navigation-option">
-          <p className="navigation-text">Visual</p>
+        <div className={styles.endNavigationOption}>
+          <p className={styles.navigationText}>Visual</p>
         </div>
       </div>
 
-      <div className="line" />
+      <div className={styles.line} />
     </>
   );
 }
