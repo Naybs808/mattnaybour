@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import styles from "./Feature.module.scss";
 
 import stage from "../../images/StageScan.jpg";
+import { openInNewTab } from "../OpenInNewTab.tsx";
 
 interface FeatureProps {
   image: any;
@@ -27,7 +28,7 @@ export default function Feature(props: FeatureProps) {
     <div
       id="MyDiv"
       style={{
-        height: "inherit",
+        height: "400px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
@@ -35,7 +36,8 @@ export default function Feature(props: FeatureProps) {
     >
       <div
         style={{
-          width: "400px",
+          maxWidth: "400px",
+          width: "80%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
@@ -44,7 +46,14 @@ export default function Feature(props: FeatureProps) {
       >
         <h1> {props.title}</h1>
         <h2> {props.subText}</h2>
-        <div className={styles.seeMoreButton}>See More</div>
+        <div
+          className={styles.seeMoreButton}
+          onClick={() => {
+            openInNewTab("https://matthews.flat9art.com");
+          }}
+        >
+          See More
+        </div>
       </div>
     </div>
   );
@@ -68,13 +77,15 @@ export default function Feature(props: FeatureProps) {
         paddingRight: "5%",
       }}
     >
-      <Grid container columns={{ md: 12, sm: 12 }}>
-        <Grid item md={6} sm={12} xs={12}>
+      <Grid container columns={{ lg: 12, md: 12, sm: 12, xs: 12 }}>
+        <Grid item lg={1} md={0} sm={0} xs={0}></Grid>
+        <Grid item lg={5} md={6} sm={12} xs={12}>
           {firstPart}
         </Grid>
-        <Grid item md={6} sm={12} xs={12}>
+        <Grid item lg={5} md={6} sm={12} xs={12}>
           {secondPart}
         </Grid>
+        <Grid item lg={1} md={0} sm={0} xs={0}></Grid>
       </Grid>
     </div>
   );

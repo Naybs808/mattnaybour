@@ -35,7 +35,7 @@ export default function NavigationBar() {
           <p className={styles.navigationText}>About</p>
         </div>
         <div className={styles.endNavigationOption}>
-          <p className={styles.navigationText}>Visual</p>
+          <p className={styles.navigationText}>Contact</p>
         </div>
       </div>
 

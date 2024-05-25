@@ -7,11 +7,9 @@ import youtubeIcon from "../Iconoir/youtube.svg";
 
 import { Grid, Stack } from "@mui/material";
 import styles from "./SpecialLinks.module.scss";
+import { openInNewTab } from "../OpenInNewTab.tsx";
 
 export default function SocialLinks() {
-  const openInNewTab = (url: string) => {
-    window.open(url, "_blank", "noreferrer");
-  };
   return (
     <>
       <Grid container justifyContent={"center"} spacing={7}>
