@@ -12,6 +12,7 @@
     "@iconify/tailwind": "^1.0.1",
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
+    "emailjs-com": "^3.2.0",
     "eslint": "9.x",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

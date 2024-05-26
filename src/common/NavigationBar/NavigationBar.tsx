@@ -29,13 +29,10 @@ export default function NavigationBar() {
         <div
           className={styles.endNavigationOption}
           onClick={() => {
-            navigate("/about");
+            navigate("/gallery");
           }}
         >
-          <p className={styles.navigationText}>About</p>
-        </div>
-        <div className={styles.endNavigationOption}>
-          <p className={styles.navigationText}>Contact</p>
+          <p className={styles.navigationText}>Gallery</p>
         </div>
       </div>
 

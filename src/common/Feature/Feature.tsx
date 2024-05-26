@@ -11,6 +11,7 @@ interface FeatureProps {
   imageLeft: boolean;
   title: string;
   subText: string;
+  link: string;
 }
 
 export default function Feature(props: FeatureProps) {
@@ -28,7 +29,7 @@ export default function Feature(props: FeatureProps) {
     <div
       id="MyDiv"
       style={{
-        height: "400px",
+        height: "360px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
@@ -49,7 +50,7 @@ export default function Feature(props: FeatureProps) {
         <div
           className={styles.seeMoreButton}
           onClick={() => {
-            openInNewTab("https://matthews.flat9art.com");
+            openInNewTab(props.link);
           }}
         >
           See More
