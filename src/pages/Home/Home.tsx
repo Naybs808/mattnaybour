@@ -17,7 +17,7 @@ import Stack from "@mui/material/Stack";
 import { useSpring, animated } from "react-spring";
 import SpecialLinks from "../../common/SpecialLinks/SpecialLinks.tsx";
 import Feature from "../../common/Feature/Feature.tsx";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Tooltip } from "@mui/material";
 import CustomTextfield from "./CustomTextfield.tsx";
 
 import emailjs from "emailjs-com";
@@ -85,6 +85,9 @@ export default function Application() {
         }
       );
   };
+  const messageFormValid =
+    validateEmail(email) && message !== "" && name !== "";
+
   return (
     <>
       <Stack direction="column" minHeight={"100vh"} display="flex">
@@ -207,16 +210,28 @@ export default function Application() {
               rows={4}
               type="text"
             />
-            <Button
-              size="large"
-              variant="contained"
-              style={{ marginBottom: "100px", backgroundColor: "#9e1e2b" }}
-              onClick={() => {
-                sendEmail();
-              }}
+            <Tooltip
+              title={
+                messageFormValid
+                  ? ""
+                  : "Fill in all 3 fields to send a message."
+              }
             >
-              Send
-            </Button>
+              <Button
+                size="large"
+                variant="contained"
+                style={{
+                  marginBottom: "100px",
+                  backgroundColor: messageFormValid ? "#9e1e2b" : "grey",
+                }}
+                onClick={() => {
+                  sendEmail();
+                }}
+                disabled={!messageFormValid}
+              >
+                Send
+              </Button>
+            </Tooltip>
           </div>
         </div>
       </div>
