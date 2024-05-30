@@ -20,15 +20,10 @@ import Feature from "../../common/Feature/Feature.tsx";
 import { Box, Button, TextField, Tooltip } from "@mui/material";
 import CustomTextfield from "./CustomTextfield.tsx";
 
-import emailjs from "emailjs-com";
+import { sendEmail, validateEmail } from "./emailFunctions.tsx";
 
 const tagline =
   "Hi, I'm Matt and I like designing websites, would you like one too?";
-
-const validateEmail = (email) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-};
 
 export default function Application() {
   const springAppear = useSpring({
@@ -54,36 +49,6 @@ export default function Application() {
       setEmailError(true);
       setEmailHelperText("Please enter a valid email address");
     }
-  };
-
-  const sendEmail = () => {
-    console.log("attempting to send email");
-    const templateParams = {
-      to_name: "Matt",
-      from_name: name,
-      from_email: email,
-      message: message,
-    };
-
-    emailjs
-      .send(
-        "service_ba2crgg",
-        "template_jj24cvv",
-        templateParams,
-        "cXUmEpnVJKayLJEPi"
-      )
-      .then(
-        (response) => {
-          console.log(
-            "Email sent successfully!",
-            response.status,
-            response.text
-          );
-        },
-        (error) => {
-          console.error("Failed to send email", error);
-        }
-      );
   };
   const messageFormValid =
     validateEmail(email) && message !== "" && name !== "";
@@ -225,7 +190,7 @@ export default function Application() {
                   backgroundColor: messageFormValid ? "#9e1e2b" : "grey",
                 }}
                 onClick={() => {
-                  sendEmail();
+                  sendEmail(name, email, message);
                 }}
                 disabled={!messageFormValid}
               >
