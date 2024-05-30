@@ -25,6 +25,11 @@ import emailjs from "emailjs-com";
 const tagline =
   "Hi, I'm Matt and I like designing websites, would you like one too?";
 
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
 export default function Application() {
   const springAppear = useSpring({
     config: { duration: 800 },
@@ -35,6 +40,21 @@ export default function Application() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [emailHelperText, setEmailHelperText] = useState("");
+
+  const handleEmailChange = (event) => {
+    const value = event.target.value;
+    setEmail(value);
+
+    if (value === "" || validateEmail(value)) {
+      setEmailError(false);
+      setEmailHelperText("");
+    } else {
+      setEmailError(true);
+      setEmailHelperText("Please enter a valid email address");
+    }
+  };
 
   const sendEmail = () => {
     console.log("attempting to send email");
@@ -151,11 +171,35 @@ export default function Application() {
               rows={1}
               type="name"
             />
-            <CustomTextfield
-              label="Email"
-              setText={setEmail}
-              rows={1}
-              type="email"
+            <TextField
+              label={"Email"}
+              type={"email"}
+              variant="filled"
+              onChange={handleEmailChange}
+              error={emailError}
+              helperText={emailHelperText}
+              sx={{
+                "& .MuiFilledInput-root": {
+                  backgroundColor: "transparent", // Optional: to keep background transparent
+                  "&:before": {
+                    borderColor: "#9e1e2b", // Default bottom border color
+                  },
+                  "&:hover:before": {
+                    borderColor: "#9e1e2b", // Bottom border color on hover
+                  },
+                  "&.Mui-focused:before": {
+                    borderColor: "#9e1e2b", // Bottom border color when focused
+                  },
+                  "&.Mui-focused:after": {
+                    borderColor: "#9e1e2b", // Bottom border color when focused
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  "&.Mui-focused": {
+                    color: "#9e1e2b", // Label color when focused
+                  },
+                },
+              }}
             />
             <CustomTextfield
               label="Message"
