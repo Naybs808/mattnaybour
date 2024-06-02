@@ -5,13 +5,24 @@ export function validateEmail(email: string) {
   return emailRegex.test(email);
 }
 
-export function sendEmail(name: string, email: string, message: string) {
+export function sendEmail(
+  name: string,
+  email: string,
+  message: string,
+  recaptchaValue: any
+) {
   const templateParams = {
     to_name: "Matt",
     from_name: name,
     from_email: email,
     message: message,
+    "g-recaptcha-response": recaptchaValue,
   };
+
+  if (recaptchaValue === null) {
+    console.error("Please complete the reCAPTCHA");
+    return;
+  }
 
   emailjs
     .send(

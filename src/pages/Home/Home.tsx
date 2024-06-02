@@ -22,6 +22,8 @@ import CustomTextfield from "./CustomTextfield.tsx";
 
 import { sendEmail, validateEmail } from "./emailFunctions.tsx";
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 const tagline =
   "Hi, I'm Matt and I like designing websites, would you like one too?";
 
@@ -37,6 +39,12 @@ export default function Application() {
   const [message, setMessage] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [emailHelperText, setEmailHelperText] = useState("");
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  const handleRecaptchaChange = (value) => {
+    console.log("Captcha value:", value);
+    setRecaptchaValue(value);
+  };
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -175,6 +183,11 @@ export default function Application() {
               rows={4}
               type="text"
             />
+            <ReCAPTCHA
+              sitekey="6LciAO8pAAAAAK9ubRCSzXL79GTbh2Oc9JrM34hw"
+              onChange={handleRecaptchaChange}
+            />
+
             <Tooltip
               title={
                 messageFormValid
@@ -190,7 +203,7 @@ export default function Application() {
                   backgroundColor: messageFormValid ? "#9e1e2b" : "grey",
                 }}
                 onClick={() => {
-                  sendEmail(name, email, message);
+                  sendEmail(name, email, message, recaptchaValue);
                 }}
                 disabled={!messageFormValid}
               >
