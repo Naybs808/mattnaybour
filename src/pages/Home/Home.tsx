@@ -110,7 +110,7 @@ export default function Application() {
 
         <TagLine
           text={
-            "Hit me up here if you would like to get in touch about web design, art, music, chess, or any other enquiries."
+            "Hit me up here if you would like to get in touch about web design, art, music, chess, or anything else."
           }
           paddingTop="10px"
         />

@@ -1,0 +1,18 @@
+:root {
+    --link-primary: #AEAEAE;
+    --theme-primary: #9e1e2b;
+}
+
+.navigationText {
+    height: 55px;
+    line-height: 55px;
+    margin: 0;
+    transition: color .25s ease-in;
+    color: var(--link-primary);
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.navigationText:hover {
+    color: var(--theme-primary)
+}
